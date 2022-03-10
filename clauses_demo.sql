@@ -14,12 +14,6 @@ UPDATE clauses_demo SET empDep = 'Data Scientist' WHERE emp_id=101;
 UPDATE clauses_demo SET empName = 'Nidhi' WHERE emp_id=108;
 
 
-/*Adding Constraints -> Default Unique*/
-ALTER TABLE clauses_demo ADD empEducation VARCHAR(30) DEFAULT 'B.Tech';
-ALTER TABLE clauses_demo ALTER COLUMN empEducation VARCHAR(30) DEFAULT Graduation;
-ALTER TABLE clauses_demo ADD CONSTRAINT Df_Education DEFAULT 'B.Tech' FOR empEducation;
-
-
 INSERT INTO clauses_demo VALUES('Ravi',100000,'Delhi');
 INSERT INTO clauses_demo VALUES('Mukesh', 70000, 'Noida', 'Business Analyst');
 INSERT INTO clauses_demo VALUES('Gaurav',50000,'Delhi','Java Developer');
