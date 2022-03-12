@@ -31,41 +31,14 @@ INSERT INTO Department(depID, depName, depAddress, empID) VALUES (2, 'PYTHON', '
 INSERT INTO Department(depID, depName, depAddress, empID) VALUES (3, 'Devops', 'HYD', 101);
 INSERT INTO Department(depID, depName, depAddress, empID) VALUES (4, 'HR', 'Chennai', 105)
 
-/* SUB QURIES-> Find Employee Details who have Highest Salary*/
-SELECT * FROM emp_constrains_demo where empSalary=(SELECT MAX(empSalary) FROM emp_constrains_demo)
 
-/* Q. Select Employee Name who is working in some department*/
-SELECT * FROM emp_constrains_demo,Department WHERE emp_constrains_demo.depID = Department.depID;
-
-/* Q. Select Employee Name who is working in some department Order by Employee Salary   */
-SELECT empName,empSalary FROM emp_constrains_demo,Department WHERE emp_constrains_demo.depID = Department.depID ORDER BY emp_constrains_demo.empSalary;
-
-/* CROSS JOIN*/
-SELECT * FROM emp_constrains_demo cross join Department;
-
-/*LEFT JOIN  and  RIGHT JOIN*/
-SELECT * FROM emp_constrains_demo LEFT JOIN Department ON emp_constrains_demo.depID = Department.depID;
-SELECT * FROM emp_constrains_demo RIGHT JOIN Department ON emp_constrains_demo.depID = Department.depID;
-
-/*FULL JOIN*/
-SELECT * FROM emp_constrains_demo FULL JOIN Department ON emp_constrains_demo.emp_id = Department.empID;
-
-/*SELF JOIN-> Q. Find Employee Name who is working in atlest two department*/
-select * from Department
-select * from emp_constrains_demo
-SELECT * FROM Department a, Department b
-SELECT empName FROM emp_constrains_demo WHERE emp_id=(SELECT DISTINCT(a.empID) FROM Department a, Department b WHERE a.empID = b.empID AND a.depID<>b.depID);
-
-
-
-/*                                 LIKES              */
+---------LIKES -------------
 /*Q. Find student whose name is starts from A and R?*/
 SELECT * FROM emp_constrains_demo WHERE empName LIKE '[AR]%' ORDER BY empName;
 
 /*Q. Find student who have last letter as 'i' ?*/
 SELECT * FROM emp_constrains_demo WHERE empName LIKE '%i' ORDER BY emp_id;
 
-/*Cast*/
 
 
 
